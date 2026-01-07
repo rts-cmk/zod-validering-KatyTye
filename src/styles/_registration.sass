@@ -1,1 +1,59 @@
-// Registration Form Styles
+// REGISTRATION FORM STYLES
+@use "./_var.sass" as var
+@use 'sass:color'
+
+.reg-form
+	margin: auto
+	padding: 15px
+	border-radius: 5px
+	background: var.$secondary-background-color
+
+	&__submit
+		width: 100%
+		border: none
+		padding: 10px
+		cursor: pointer
+		border-radius: 5px
+		background: var.$primary-button-background-color
+
+		&:hover, &:focus
+			background: color.adjust(var.$primary-button-background-color, $lightness: -5%)
+
+	&__title
+		text-align: center
+
+	&__field
+		display: block
+		margin-top: 10px
+
+		&:last-of-type
+			gap: 10px
+			display: flex
+			margin: 25px 25px
+			align-items: center
+			justify-content: flex-start
+
+			& input
+				width: 15px
+				display: block
+				min-width: unset
+
+			& span
+				margin: 0
+				display: block
+
+		&-text
+			display: inherit
+			font-weight: bold
+			margin-bottom: 2px
+			width: fit-content
+
+		&-input
+			width: 100%
+			height: 30px
+			border: none
+			outline: none
+			min-width: 330px
+			padding: 5px 10px
+			border-radius: 5px
+			color: var.$secondary-text-color
