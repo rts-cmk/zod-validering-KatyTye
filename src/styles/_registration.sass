@@ -5,6 +5,7 @@
 .reg-form
 	margin: auto
 	padding: 15px
+	max-width: 500px
 	border-radius: 5px
 	background: var.$secondary-background-color
 
@@ -25,6 +26,20 @@
 	&__field
 		display: block
 		margin-top: 10px
+
+		&-errors
+			padding: 5px 0px
+			list-style-type: "✘"
+			list-style-position: inside
+
+			& li
+				color: red
+				font-style: italic
+
+			& span
+				color: inherit
+				text-wrap: wrap
+				margin-left: 10px
 
 		&:last-of-type
 			gap: 10px

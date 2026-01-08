@@ -35,7 +35,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"false"} />
 				<ul className="reg-form__field-errors">
 					{errors.username?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -46,7 +48,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"given-name"} />
 				<ul className="reg-form__field-errors">
 					{errors.firstname?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -57,7 +61,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"family-name"} />
 				<ul className="reg-form__field-errors">
 					{errors.lastname?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -68,7 +74,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"email"} />
 				<ul className="reg-form__field-errors">
 					{errors.email?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -79,7 +87,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"new-password"} />
 				<ul className="reg-form__field-errors">
 					{errors.password?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -90,7 +100,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"new-password"} />
 				<ul className="reg-form__field-errors">
 					{errors.repeatedPassword?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -101,7 +113,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"bday-year"} />
 				<ul className="reg-form__field-errors">
 					{errors.birthday?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
@@ -112,7 +126,9 @@ export default function RegistrationForm() {
 					className="reg-form__field-input" autoComplete={"tel"} />
 				<ul className="reg-form__field-errors">
 					{errors.phone?.errors.map(
-						(err, index) => <li key={index}>{err}</li>
+						(err, index) => <li key={index}><span>
+							{err}
+						</span></li>
 					)}
 				</ul>
 			</label>
