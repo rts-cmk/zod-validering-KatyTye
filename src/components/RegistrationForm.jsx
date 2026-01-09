@@ -1,9 +1,11 @@
 import validateScheme from "../helpers/validateForm"
+import { useNavigate } from "react-router"
 import { useState } from "react"
 import zod from "zod"
 
-export default function RegistrationForm() {
+export default function RegistrationForm({ func }) {
 	const [errors, setErrors] = useState({})
+	const navigate = useNavigate()
 
 	function validateField(target) {
 		const result = validateScheme.shape[target.name].safeParse(target.value)
@@ -27,6 +29,8 @@ export default function RegistrationForm() {
 
 		if (result.success) {
 			setErrors({})
+			func(form.elements)
+			navigate("/thanks")
 		} else {
 			const errorObject = zod.treeifyError(result.error)
 			setErrors(errorObject.properties)
