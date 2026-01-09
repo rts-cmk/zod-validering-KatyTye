@@ -16,7 +16,9 @@ function App() {
 			path: "/thanks",
 			element: <Thanks data={savedData} />
 		}
-	])
+	], {
+		basename: "/zod-validering-KatyTye/"
+	})
 
 	return (<RouterProvider router={browserRouter} />)
 }
