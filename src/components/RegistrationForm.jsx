@@ -23,15 +23,12 @@ export default function RegistrationForm() {
 		const formData = new FormData(form)
 		const formObject = Object.fromEntries(formData.entries())
 
-
 		const result = validateScheme.safeParse(formObject)
 
 		if (result.success) {
 			setErrors({})
 		} else {
 			const errorObject = zod.treeifyError(result.error)
-			console.log(errorObject.properties);
-
 			setErrors(errorObject.properties)
 		}
 	}
