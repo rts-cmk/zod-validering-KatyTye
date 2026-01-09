@@ -20,7 +20,7 @@ const validateScheme = zod.object({
 	lastname: zod.string()
 		.nonempty("Entering a last name is required."),
 	email: zod.email("The entered e-mail is not valid."),
-	password: zod.coerce.string()
+	password: zod.string()
 		.nonempty("Entering your password is required.")
 		.min(10, "Your password must atleast have 10 charachers.")
 		.regex(/[a-z]/, "Your password must contain small letters.")
@@ -28,7 +28,7 @@ const validateScheme = zod.object({
 		.regex(/[\d]/, "Your password must contain numbers.")
 		.regex(/[\W]/, "Your password must contain special characters")
 		.regex(/^\S+$/, "Your password cannot contain any spaces."),
-	repeatedPassword: zod.coerce.string()
+	repeatedPassword: zod.string()
 		.nonempty("Repeating the password is required."),
 	birthday: zod.coerce.date("Entering your birthday is required.")
 		.max(
@@ -39,9 +39,9 @@ const validateScheme = zod.object({
 		.nonempty("Entering your phone number is required.")
 		.regex(/^\+?\d{8,15}$/, "Phone number must contain only numbers and be at least 8 digits long.")
 })
-	.refine((data) => data.password === data.repeatedPassword, {
-		message: "Passwords matcher ikke.",
-		path: ["repeatedPassword"]
-	})
+	.refine(
+		(data) => data.password === data.repeatedPassword,
+		{ message: "Passwords matcher ikke.", path: ["repeatedPassword"] }
+	)
 
 export default validateScheme
